@@ -30,10 +30,10 @@ Currently it is not possible to recover your account, however you can ask the pe
 
 #### What are the ban criteria ?
 Players registered as "harmful" are categorized by level:
-- Level 1: Player shows the use of hack / bug or cheat
-- Level 2: Player does not have the notion of role-play
-- Level 3: Toxic Player
-- Level 4: Player who posts advertisements from his server.
+- Level 4: Player shows the use of hack / bug or cheat
+- Level 3: Player does not have the notion of role-play
+- Level 2: Toxic Player
+- Level 1: Player who posts advertisements from his server.
 
 You can choose the configuration level in the [config] file (Config.lua)
 

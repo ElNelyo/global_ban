@@ -29,10 +29,10 @@ Actuellement il n'est pas possible de récupérer votre compte, vous pouvez cepe
 
 #### Quels sont les critères de bannissement ?
 Les joueurs enregistrés comme "nuisibles" sont catégorisés par niveau :
-- Niveau 1 : Joueur aillant fait preuve d'utilisation de hack/bug ou cheat
-- Niveau 2 : Joueur n'aillant pas pas la notion de role-play
-- Niveau 3 : Joueur toxique 
-- Niveau 4 : Joueur qui poste des publicités de son serveur.
+- Niveau 4 : Joueur aillant fait preuve d'utilisation de hack/bug ou cheat
+- Niveau 3 : Joueur n'aillant pas pas la notion de role-play
+- Niveau 2 : Joueur toxique 
+- Niveau 1 : Joueur qui poste des publicités de son serveur.
 
 Vous pouvez choisir le niveau de configuration dans le fichier [config](Config.lua) 
 
