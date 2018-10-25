@@ -3,7 +3,7 @@
 ![GitHub package version](https://img.shields.io/badge/Version-1.0-brightgreen.svg)
 
 ## Introduction
-[Anglais](other_file.md) 
+[Français](README.md) 
 
 GLOBAL BAN est un script de ban inter-serveur, le fonctionnement est assez simple il permet de mettre en commun
 une liste de joueurs **bannis** sur les différents serveurs FiveM. 
