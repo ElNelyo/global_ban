@@ -5,60 +5,63 @@
 ## Introduction
 [Français](README.md) 
 
-GLOBAL BAN est un script de ban inter-serveur, le fonctionnement est assez simple il permet de mettre en commun
-une liste de joueurs **bannis** sur les différents serveurs FiveM. 
-Les joueurs bannis sont identifiés par trois critères :
-- L'adresse IP
-- Le steam ID
-- La license Rockstar
-## Fonctionnement
-Le script fonctionne sous appel d'un API libre.
-Cette API autorise uniquement la lecture et non l'insertion de données.
+GLOBAL BAN is an inter-server ban script, the operation is quite simple it allows to pool
+a list of ** banned ** players on the various FiveM servers.
+The banned players are identified by three criteria
 
-#### Comment ajouter un joueur à bannir ?
-Nous avons 3098 identifiants différents d'enregistrés.
-Nous ne comptons pas en rajouter plus. 
-Cependant si vous avez suffisamment de preuves ( captures d'écrans, texte , IP, steam ID) et me les faire parvenir via messages privés.
+- IP adress
+- Steam ID
+- Rockstar licence
+## How it works ?
 
+The script works under a free API call.
+This API is only allowed with GET request.
 
-
-
-#### Je suis banni, comment faire pour récupérer mon compte ?
-Actuellement il n'est pas possible de récupérer votre compte, vous pouvez cependant demander la personne qui vous condamnée de retirer sa demande de bannissement.  
+#### How to add a player ?
+We have 3098 different identifiers registered
+We do not intend to add more.
+However, if you have enough evidence (screenshots, text, IP, steam ID) you can send them to my private messages.
 
 
-#### Quels sont les critères de bannissement ?
-Les joueurs enregistrés comme "nuisibles" sont catégorisés par niveau :
-- Niveau 1 : Joueur aillant fait preuve d'utilisation de hack/bug ou cheat
-- Niveau 2 : Joueur n'aillant pas pas la notion de role-play
-- Niveau 3 : Joueur toxique 
-- Niveau 4 : Joueur qui poste des publicités de son serveur.
+#### I'm banned, how i can unlock my account ?
 
-Vous pouvez choisir le niveau de configuration dans le fichier [config](Config.lua) 
+Currently it is not possible to recover your account, however you can ask the person who sentenced you to withdraw his ban request.  
+
+
+#### What are the ban criteria ?
+Players registered as "harmful" are categorized by level:
+- Level 1: Player shows the use of hack / bug or cheat
+- Level 2: Player does not have the notion of role-play
+- Level 3: Toxic Player
+- Level 4: Player who posts advertisements from his server.
+
+You can choose the configuration level in the [config] file (Config.lua)
 
     Config                        = {}
      Config.WarningLevel           = 1
  
- Dans ce cas-çi, vous refuserez l'accès aux joueurs bannis de niveau 1 uniquement
+In this case, you deny access to level 1 only
     
     Config                        = {}
     Config.WarningLevel           = 4
 
-Dans ce cas-çi, vous refuserez l'accès aux joueurs bannis de niveau 1,2,3 et 4
+In this case, you deny access to level 1,2,3 and 4 
 
 ## Installation
-- Téléchargez depuis GitHub 
+- Download from GitHub 
 
-        git clone ....
-- Editez le fichier config.lua
-- Ajoutez la ressource au server.cfg
+        git clone https://github.com/ElNelyo/global_ban.git
+        
+- Edit config.lua
+- Add ressource in server.cfg
 
-Attention, le script de fonctionnera pas si vous avez plusieurs ressources qui gèrent  les connexions à votre serveur FiveM.
+
+Be careful, the script will not work if you have multiple resources that manage connections to your FiveM server.
  
 
 ## Credits
 
 - [Nelyo](https://github.com/ElNelyo)  - API Developpement & FiveM ressource (Nelyo#1462)
-- [JägerBom](https://github.com/TanguyOrtegat) - Contribution  à la liste de ban (Jager Bom [dev]#2795)
-- [DelduWaht](https://github.com/LuaDeldu) - Contribution à la liste de ban (Delduwaht#2222)
-- [Tracid](https://github.com/tracid56) - Contribution à la liste de ban (Tracid#5857)
+- [JägerBom](https://github.com/TanguyOrtegat) - Contribution to ban list (Jager Bom [dev]#2795)
+- [DelduWaht](https://github.com/LuaDeldu) - Contribution to ban list (Delduwaht#2222)
+- [Tracid](https://github.com/tracid56) - Contribution to ban list (Tracid#5857)

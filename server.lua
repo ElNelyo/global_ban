@@ -22,13 +22,13 @@ AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
 
     Wait(1500)
     print(autorized)
-    ban_request(GetPlayerIdentifiers(_source)[2],"steam")
+    ban_request(GetPlayerIdentifiers(_source)[2],"licence")
     deferrals.update(': Checking your license R* . . .')
 
     Citizen.Wait(1500)
     print(autorized)
     deferrals.update(': Checking your IP . . .')
-    ban_request(GetPlayerIdentifiers(_source)[3],"steam")
+    ban_request(GetPlayerIdentifiers(_source)[3],"ip")
 
     Wait(1500)
     if(autorized)then

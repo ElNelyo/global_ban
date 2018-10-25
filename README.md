@@ -49,7 +49,7 @@ Dans ce cas-çi, vous refuserez l'accès aux joueurs bannis de niveau 1,2,3 et 4
 ## Installation
 - Téléchargez depuis GitHub 
 
-        git clone ....
+        git clone https://github.com/ElNelyo/global_ban.git
 - Editez le fichier config.lua
 - Ajoutez la ressource au server.cfg
 
