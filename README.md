@@ -15,7 +15,7 @@ Les joueurs bannis sont identifiés par trois critères :
 Le script fonctionne sous appel d'un API libre.
 Cette API autorise uniquement la lecture et non l'insertion de données.
 
-####Comment ajouter un joueur à bannir ?
+#### Comment ajouter un joueur à bannir ?
 Nous avons 3098 identifiants différents d'enregistrés.
 Nous ne comptons pas en rajouter plus. 
 Cependant si vous avez suffisamment de preuves ( captures d'écrans, texte , IP, steam ID) et me les faire parvenir via messages privés.
@@ -34,7 +34,7 @@ Les joueurs enregistrés comme "nuisibles" sont catégorisés par niveau :
 - Niveau 3 : Joueur toxique 
 - Niveau 4 : Joueur qui poste des publicités de son serveur.
 
-Vous pouvez choisir le niveau de configuration dans le fichier **Config.lua** 
+Vous pouvez choisir le niveau de configuration dans le fichier [config](Config.lua) 
 
     Config                        = {}
      Config.WarningLevel           = 1
