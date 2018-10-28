@@ -1,6 +1,7 @@
-local autorized = true
+
 
 function ban_request( info,type)
+  local autorized = true
     PerformHttpRequest("https://www.family-v.fr/global_ban_api/bans/search.php/?id="..info.."&warning="..Config.WarningLevel, function(err, rText, headers)
             if(err==200)then
                     autorized= false
@@ -38,6 +39,3 @@ AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
     end
 
     end)
-
-
-
