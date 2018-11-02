@@ -1,7 +1,8 @@
 
+local autorized = true
 
 function ban_request( info,type)
-  local autorized = true
+
     PerformHttpRequest("https://www.family-v.fr/global_ban_api/bans/search.php/?id="..info.."&warning="..Config.WarningLevel, function(err, rText, headers)
             if(err==200)then
                     autorized= false
@@ -13,23 +14,21 @@ function ban_request( info,type)
 end
 
 AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
-    autorized = true
+
     local _source = source
     deferrals.defer()
 
     Wait(1500)
     ban_request(GetPlayerIdentifiers(_source)[1],"steam")
-    deferrals.update(': Checking your steam id. . .')
+    deferrals.update(': Checking your data step 1 . . .')
 
     Wait(1500)
-    print(autorized)
     ban_request(GetPlayerIdentifiers(_source)[2],"licence")
-    deferrals.update(': Checking your license R* . . .')
+    deferrals.update(': Checking your data step 2 . . .')
 
-    Citizen.Wait(1500)
-    print(autorized)
-    deferrals.update(': Checking your IP . . .')
+    Wait(1500)
     ban_request(GetPlayerIdentifiers(_source)[3],"ip")
+    deferrals.update(': Checking your data step 3 . . .')
 
     Wait(1500)
     if(autorized)then
@@ -37,5 +36,6 @@ AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
         else
         deferrals.done("Sorry you aren't allowed to join us :)")
     end
+    autorized = true
 
     end)
