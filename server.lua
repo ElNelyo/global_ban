@@ -1,41 +1,37 @@
 
 
-function ban_request( info,type)
-  local autorized = true
-    PerformHttpRequest("https://www.family-v.fr/global_ban_api/bans/search.php/?id="..info.."&warning="..Config.WarningLevel, function(err, rText, headers)
+function checkIdentifierBanned( info,type)
+    PerformHttpRequest("https://global-ban.family-v.com/bans/search.php?id="..info.."&warning="..Config.WarningLevel, function(err, rText, headers)
             if(err==200)then
-                    autorized= false
-                    print("--[GLOBAL BAN] We got him boys ("..type..")")
+                  return false
                 end
             end, "GET", "", {["Content-Type"] = "application/json"});
-
-
+        return true
 end
 
 AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
-    autorized = true
-    local _source = source
+    local playerId = source
     deferrals.defer()
+    deferrals.update(': Making sure you are not globally banned')
 
-    Wait(1500)
-    ban_request(GetPlayerIdentifiers(_source)[1],"steam")
-    deferrals.update(': Checking your steam id. . .')
+    Citizen.Wait(1000)
 
-    Wait(1500)
-    print(autorized)
-    ban_request(GetPlayerIdentifiers(_source)[2],"licence")
-    deferrals.update(': Checking your license R* . . .')
+    local identifiers = GetPlayerIdentifiers(playerId)
 
-    Citizen.Wait(1500)
-    print(autorized)
-    deferrals.update(': Checking your IP . . .')
-    ban_request(GetPlayerIdentifiers(_source)[3],"ip")
+    local steam = checkIdentifierBanned(identifiers[1],"steam")
+    Citizen.Wait(1000)
 
-    Wait(1500)
-    if(autorized)then
-        deferrals.done()
-        else
-        deferrals.done("Sorry you aren't allowed to join us :)")
+    local steam = checkIdentifierBanned(identifiers[2],"license")
+    Citizen.Wait(1000)
+
+    local steam = checkIdentifierBanned(identifiers[3],"ip")
+    Citizen.Wait(1000)
+
+    if steam and license and ip then
+      deferrals.done()
+    else
+      deferrals.done("The Ban Hammer has spoken \n You're globally permanently banned from the united federation of FiveM communities")
     end
+
 
     end)
