@@ -1,4 +1,5 @@
 
+local autorized = true
 
 function checkIdentifierBanned( info,type)
     PerformHttpRequest("https://global-ban.family-v.com/bans/search.php?id="..info.."&warning="..Config.WarningLevel, function(err, rText, headers)
@@ -32,6 +33,7 @@ AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
     else
       deferrals.done("The Ban Hammer has spoken \n You're globally permanently banned from the united federation of FiveM communities")
     end
+    autorized = true
 
 
     end)
