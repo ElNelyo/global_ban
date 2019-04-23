@@ -65,3 +65,4 @@ Be careful, the script will not work if you have multiple resources that manage 
 - [JägerBom](https://github.com/TanguyOrtegat) - Contribution to ban list (Jager Bom [dev]#2795)
 - [DelduWaht](https://github.com/LuaDeldu) - Contribution to ban list (Delduwaht#2222)
 - [Tracid](https://github.com/tracid56) - Contribution to ban list (Tracid#5857)
+- Julien - FiveM ressource (Julien #4729)
