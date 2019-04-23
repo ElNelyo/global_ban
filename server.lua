@@ -19,10 +19,10 @@ local identifiers = GetPlayerIdentifiers(playerId)
 local steam = checkIdentifierBanned(identifiers[1],"steam")
 Citizen.Wait(1000)
 
-local steam = checkIdentifierBanned(identifiers[2],"license")
+local license = checkIdentifierBanned(identifiers[2],"license")
 Citizen.Wait(1000)
 
-local steam = checkIdentifierBanned(identifiers[3],"ip")
+local ip = checkIdentifierBanned(identifiers[3],"ip")
 Citizen.Wait(1000)
 
 if steam and license and ip then
