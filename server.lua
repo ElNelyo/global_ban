@@ -2,9 +2,11 @@ function checkIdentifierBanned( info,type)
   PerformHttpRequest("https://global-ban.family-v.com/bans/search.php?id="..info.."&warning="..Config.WarningLevel, function(err, rText, headers)
   if(err==200)then
     return false
+  else
+    return true
   end
   end, "GET", "", {["Content-Type"] = "application/json"});
-  return true
+
 end
 
 AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
