@@ -18,13 +18,13 @@ Citizen.Wait(1000)
 
 local identifiers = GetPlayerIdentifiers(playerId)
 
-local steam = checkIdentifierBanned(identifiers[1],"steam")
+local steam = checkIdentifierBanned(GetPlayerId('steam', source),"steam")
 Citizen.Wait(1000)
 
-local license = checkIdentifierBanned(identifiers[2],"license")
+local license = checkIdentifierBanned(GetPlayerId('license', source),"license")
 Citizen.Wait(1000)
 
-local ip = checkIdentifierBanned(identifiers[3],"ip")
+local ip = checkIdentifierBanned(GetPlayerId('ip', source),"ip")
 Citizen.Wait(1000)
 
 if steam and license and ip then
@@ -33,3 +33,13 @@ else
   deferrals.done("The Ban Hammer has spoken \n You're globally permanently banned from the united federation of FiveM communities")
 end
 end)
+
+function GetPlayerId(type, id)
+    local identifiers = GetPlayerIdentifiers(id)
+    for i = 1, #identifiers do
+        if string.find(identifiers[i], type, 1) ~= nil then
+            return identifiers[i]
+        end
+    end
+    return false
+end
